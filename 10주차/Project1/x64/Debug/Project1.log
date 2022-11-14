@@ -1,6 +1,2 @@
 ﻿  Main.cpp
-C:\Git\3DProgramming\10주차\Project1\Main.cpp(13,42): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Git\3DProgramming\10주차\Project1\Main.cpp(13,8): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Git\3DProgramming\10주차\Project1\Main.cpp(12,56): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-C:\Git\3DProgramming\10주차\Project1\Main.cpp(12,31): warning C4244: '인수': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Project1.vcxproj -> C:\Git\3DProgramming\10주차\x64\Debug\Project1.exe
