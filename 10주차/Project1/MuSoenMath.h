@@ -172,22 +172,64 @@ public:
 		T input9 = 0, T input10 = 0, T input11 = 0, T input12 = 0,
 		T input13 = 0, T input14 = 0, T input15 = 0, T input16 = 0)
 	{
-		T input[16] = { input1, input2, input3, input4, 
-			input5, input6, input7, input8, 
-			input9, input10, input11, input12, 
+		Init(input1, input2, input3, input4,
+			input5, input6, input7, input8,
+			input9, input10, input11, input12,
+			input13, input14, input15, input16);
+	}
+public:
+	void Init(T input1, T input2 = 0, T input3 = 0, T input4 = 0,
+		T input5 = 0, T input6 = 0, T input7 = 0, T input8 = 0,
+		T input9 = 0, T input10 = 0, T input11 = 0, T input12 = 0,
+		T input13 = 0, T input14 = 0, T input15 = 0, T input16 = 0)
+	{
+		T input[16] = { input1, input2, input3, input4,
+			input5, input6, input7, input8,
+			input9, input10, input11, input12,
 			input13, input14, input15, input16 };
 
-		int index=0;
+		int index = 0;
 		for (int i = 0; i < S; i++)
 		{
 			for (int j = 0; j < S; j++)
 			{
 				val[i][j] = input[index];
-			index++;
+				index++;
 			}
 		}
 	}
-public:
+	void InitIdentityMatrix()
+	{
+		Init(0,0,0,0,
+			0,0,0,0,
+			0,0,0,0,
+			0,0,0,0);
+
+		for (int i = 0; i < S; i++)
+		{
+			val[i][i] = 1;
+		}
+	}
+	void Transpose()
+	{
+		T temp[S][S];
+		for (int i = 0; i < S; i++)
+		{
+			for (int j = 0; j < S; j++)
+			{
+				temp[i][j] = val[i][j];
+			}
+		}
+
+
+		for (int i = 0; i < S; i++)
+		{
+			for (int j = 0; j < S; j++)
+			{
+				val[i][j] = temp[j][i];
+			}
+		}
+	}
 	void print() 
 	{
 		std::cout << "(";
@@ -198,18 +240,13 @@ public:
 			{
 				k++;
 				std::cout << val[i][j];
-				if (k > 8)
-				{
-					std::cout << " ) ";
-				}
-				else
-				{
-					std::cout << " , ";
-				}
+				std::cout << " ";
 			}
-			std::cout << "\n";
+			if(i<S-1){
+				std::cout << "\n";
+			}
 		}
-		std::cout << "\n";
+		std::cout << ")\n";
 	}
 public:
 	mat operator+(mat m)

@@ -34,17 +34,9 @@ int main()
 	mat3 b(	1, 2, 3,
 			3, 4, 2,
 			7, 6, 12);
+	b.Transpose();
+	b.print();
 
-	mat3 c(2, 67, 3,
-		1, 2, 24,
-		42, 4, 8);
-
-
-
-	vec3 result = a * b * c;
-	//result = math::AddVector(a,b);
-
-	result.print();
 
 	return 0;
 }
