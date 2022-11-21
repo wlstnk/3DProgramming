@@ -1,6 +1,13 @@
 #pragma once
 #include <iostream>
 
+const double PI = 3.14159265358979f;
+
+//function
+float radians(float degree)
+{
+	return degree * PI / 180;
+}
 //Class List
 template <typename T, int S> class vec;
 template <typename T, int S> class mat;
@@ -54,7 +61,38 @@ public:
 		}
 		std::cout << ")\n\n";
 	}
+	void init(vec v)
+	{
+		for (int i = 0; i < S; i++)
+		{
+			val[i] = v.val[i];
+		}
+	}
 public:
+	void operator=(vec v)
+	{
+		init(v);
+	}
+	vec operator+=(vec v)
+	{
+		init(math::Add(*this, v));
+	}
+	vec operator-=(vec v)
+	{
+		init(math::Subtract(*this, v));
+	}
+	vec operator*=(T s)
+	{
+		init(math::Multiply(*this, s));
+	}
+	vec operator*=(mat<T, S> m)
+	{
+		init(math::Multiply(*this, m));
+	}
+	vec operator/=(T s)
+	{
+		init(math::Devide(*this, s));
+	}
 	vec operator+(vec v)
 	{
 		return math::Add(*this, v);
@@ -82,10 +120,14 @@ public:
 	T z() { return val[2]; }
 	T w() { return val[3]; }
 
+	void x(T setValue) { val[0] = setValue; }
+	void y(T setValue) { val[1] = setValue; }
+	void z(T setValue) { val[2] = setValue; }
+	void w(T setValue) { val[3] = setValue; }
+
 public:
 	T val[S];
 };
-
 
 
 template <typename T, int S>
@@ -121,7 +163,38 @@ public:
 		}
 		std::cout << ")\n";
 	}
+	void init(vec_vertical v)
+	{
+		for (int i = 0; i < S; i++)
+		{
+			val[i] = v.val[i];
+		}
+	}
 public:
+	void operator=(vec_vertical v)
+	{
+		init(v);
+	}
+	vec_vertical operator+=(vec_vertical v)
+	{
+		init(math::Add(*this, v));
+	}
+	vec_vertical operator-=(vec_vertical v)
+	{
+		init(math::Subtract(*this, v));
+	}
+	vec_vertical operator*=(T s)
+	{
+		init(math::Multiply(*this, s));
+	}
+	vec_vertical operator*=(mat<T, S> m)
+	{
+		init(math::Multiply(*this, m));
+	}
+	vec_vertical operator/=(T s)
+	{
+		init(math::Devide(*this, s));
+	}
 	vec_vertical operator+(vec_vertical v)
 	{
 		return math::Add(*this, v);
@@ -248,7 +321,41 @@ public:
 		}
 		std::cout << ")\n";
 	}
+	void Init(mat m)
+	{
+		for (int i = 0; i < S; i++)
+		{
+			for (int j = 0; j < S; j++)
+			{
+				val[i][j] = m.val[i][j];
+			}
+		}
+	}
 public:
+	void operator=(mat m)
+	{
+		Init(m);
+	}
+	void operator+=(mat m)
+	{
+		Init(math::Add(*this, m));
+	}
+	void operator-=(mat m)
+	{
+		Init(math::Subtract(*this, m));
+	}
+	void operator*=(mat m)
+	{
+		Init(math::Multiply(*this, m));
+	}
+	void operator*=(vec<T, S> v)
+	{
+		Init(math::Multiply(*this, v));
+	}
+	void operator*=(vec_vertical<T, S> v)
+	{
+		Init(math::Multiply(*this, v));
+	}
 	mat operator+(mat m)
 	{
 		return math::Add(*this, m);

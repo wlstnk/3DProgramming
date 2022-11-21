@@ -1,2 +1,29 @@
 ﻿  Main.cpp
+C:\Git\3DProgramming\10주차\Project1\MuSoenMath.h(9,21): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Git\3DProgramming\10주차\Project1\Main.cpp(102,57): warning C4244: '인수': 'double'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+C:\Git\3DProgramming\10주차\Project1\Main.cpp(103,56): warning C4244: '인수': 'double'에서 'T'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              T=float
+          ]
+C:\Git\3DProgramming\10주차\Project1\Main.cpp(148,9): warning C4305: '인수': 'double'에서 'T'(으)로 잘립니다.
+          with
+          [
+              T=float
+          ]
+C:\Git\3DProgramming\10주차\Project1\Main.cpp(163,13): warning C4305: '인수': 'double'에서 'T'(으)로 잘립니다.
+          with
+          [
+              T=float
+          ]
+C:\Git\3DProgramming\10주차\Project1\Main.cpp(171,13): warning C4305: '인수': 'double'에서 'T'(으)로 잘립니다.
+          with
+          [
+              T=float
+          ]
+C:\Git\3DProgramming\10주차\Project1\Main.cpp(245,19): warning C4244: '초기화 중': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
   Project1.vcxproj -> C:\Git\3DProgramming\10주차\x64\Debug\Project1.exe
